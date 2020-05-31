@@ -13,14 +13,14 @@ chartColors2 = rgb('Lavender');
 
 % load and structure data
 load fisheriris
-irisL_p = meas(1:6,1);
-irisW_p = meas(1:6,2);
-irisL_s = meas(1:6,3);
-irisW_s = meas(1:6,4);
+irisL_s = meas(1:6,1);
+irisW_s = meas(1:6,2);
+irisL_p = meas(1:6,3);
+irisW_p = meas(1:6,4);
 
 % *3D bar plot*
 
-X = [irisW_s, irisL_s, irisW_p, irisL_p];
+X = [irisW_p, irisL_p, irisW_s, irisL_s];
 f1 = figure;
 b = bar3(X);
 for g = 1:length(b) 
@@ -31,8 +31,8 @@ for g = 1:length(b)
     b(g).FaceAlpha = 0.70;
 end
 set(gca, 'XTick', [1 2 3 4])
-set(gca, 'XTickLabel', {'sepal width' 'sepal length' 'petal width' ...
-    'petal length'})
+set(gca, 'XTickLabel', {'petal width' 'petal length' 'sepal width' ...
+    'sepal length'})
 a1 = get(gca,'XTickLabel');
 set(gca,'XTickLabel',a1,'fontsize',fSize)
 set(gca, 'YTick', [1 2 3 4 5 6])
@@ -117,10 +117,10 @@ plot3(ax(2)*[1,1],ax(4)*[1,1],[0.001 ax(6)],'w','linewidth',lSize)
 
 % % comment or adjust to make z-axis log-scale
 % hold on
-% txtCV0 = num2str(max(irisL_p),'%.1f');
-% txtCV1 = num2str(max(irisL_s),'%.1f');
-% text(-2.5,0,0,['petal length_{max} = ' txtCV0, char(10), ...
-%     'sepal length_{max} = ' txtCV1], 'Color', 'w', 'FontSize', fSize, ...
+% txtCV0 = num2str(max(irisL_s),'%.1f');
+% txtCV1 = num2str(max(irisL_p),'%.1f');
+% text(-2.5,0,0,['sepal length_{max} = ' txtCV0, char(10), ...
+%     'petal length_{max} = ' txtCV1], 'Color', 'w', 'FontSize', fSize, ...
 %     'FontWeight', 'bold','HorizontalAlignment', 'Left')
 
 % to save the figure in darkmode
