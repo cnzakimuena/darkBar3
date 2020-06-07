@@ -13,10 +13,12 @@ chartColors2 = rgb('Lavender');
 
 % load and structure data
 load fisheriris
-irisL_s = meas(1:6,1);
-irisW_s = meas(1:6,2);
-irisL_p = meas(1:6,3);
-irisW_p = meas(1:6,4);
+
+numFlowers = 10;
+irisL_s = meas(1:numFlowers,1);
+irisW_s = meas(1:numFlowers,2);
+irisL_p = meas(1:numFlowers,3);
+irisW_p = meas(1:numFlowers,4);
 
 % *3D bar plot*
 
@@ -35,9 +37,11 @@ set(gca, 'XTickLabel', {'petal width' 'petal length' 'sepal width' ...
     'sepal length'})
 a1 = get(gca,'XTickLabel');
 set(gca,'XTickLabel',a1,'fontsize',fSize)
-set(gca, 'YTick', [1 2 3 4 5 6])
-set(gca, 'YTickLabel', {'Iris 1' 'Iris 2' 'Iris 3' 'Iris 4' 'Iris 5' ...
-    'Iris 6'})
+
+% % uncomment to assign yTick labels
+% set(gca, 'YTick', [1 2 3 4 5 6])
+% set(gca, 'YTickLabel', {'Iris 1' 'Iris 2' 'Iris 3' 'Iris 4' 'Iris 5' ...
+%     'Iris 6'})
 
 % uncomment to make z-axis log-scale
 baseline = 0.001;
@@ -47,6 +51,8 @@ for i = 1 : numel(b)
     set(b(i), 'ZData', z)
 end
 set(gca,'Zscale','log')
+
+ylim([0 numFlowers+1])
 
 zUpper = 6;
 
@@ -103,8 +109,8 @@ ax = axis;
 % 'plot3(x1*[1,1], ...' --> means no change in position in x-axis
 % '[y0 y1], ...' --> means change in position in y-axis from 'y0' to 'y1'
 % '[z1 z1]')' --> means no change in position in z-axis
-% plot3(ax(2)*[1,1],ax(3:4),ax(6)*[1,1],'w','linewidth',lSize)
-plot3(ax(2)*[1,1],[ax(3) 7],ax(6)*[1,1],'w','linewidth',lSize)
+plot3(ax(2)*[1,1],ax(3:4),ax(6)*[1,1],'w','linewidth',lSize)
+% plot3(ax(2)*[1,1],[ax(3) numFlowers+1],ax(6)*[1,1],'w','linewidth',lSize)
 
 % this is the top, back line facing the feature type label
 plot3(ax(1:2),ax(4)*[0,0],ax(6)*[1,1],'w','linewidth',lSize)
