@@ -1,14 +1,20 @@
 # darkBar3
-Plot 3-D bar graph with dark (or custom) plot background, selected color scheme and annotations.
+Script to generate a 3D bar plot with dark or custom background, selected color scheme and annotations.
 
-usage:
+Usage:
 
 ```matlab
 call_dark3Dbar()
 ```
 
+<p align="center">
+    <img src="figure.png" alt="example image" height="500">
+</p>
+
 Cite As
 
-Bélanger Nzakimuena, C. (2020). Automated Analysis of Retinal and Choroidal OCT and OCTA Images in AMD (Masters thesis, Polytechnique Montréal). Retrieved from https://publications.polymtl.ca/5234/
+[Nzakimuena, C. B. (2020). Automated analysis of retinal and choroidal OCT and OCTA images in AMD. Ecole Polytechnique, Montreal (Canada).](https://publications.polymtl.ca/5234/)
 
-![example image](figure.png)
+### References
+
+[Gao, R., Asano, S. M., Upadhyayula, S., Pisarev, I., Milkie, D. E., Liu, T. L., ... & Betzig, E. (2019). Cortical column and whole-brain imaging with molecular contrast and nanoscale resolution. Science, 363(6424), eaau8302.](https://doi.org/10.1126/science.aau8302)
