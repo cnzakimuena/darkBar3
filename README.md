@@ -1,5 +1,5 @@
 # darkBar3
-Script to generate a 3D bar plot with dark or custom background, selected color scheme and annotations.
+Script to generate a 3D bar plot with dark or custom background, selected color scheme and annotations. The implementation is compatible with MATLAB R2019b.
 
 Usage:
 
